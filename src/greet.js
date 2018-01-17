@@ -1,13 +1,5 @@
 'use strict';
 
-var greet = function(name) {
-	if (name === undefined) {
-		name = 'world';
-	}
-
-	return 'Hello ' + name + '!';
-};
-
 var knightMove = function(x1,y1,x2,y2) {
 
 	var xAbs = Math.abs(x2 - x1);
@@ -42,7 +34,25 @@ var kingMove = function(x1,y1,x2,y2){
 }
 
 var whitePawnMove = function(x1,y1,x2,y2){
+	
+	if(x1 == x2 && y2 - y1 == 1){
+		return true;
+	}
+	if(x1 == x2 && y2 - y1 == 2 && y1 == 2){
+		return true;
+	}
+	return false;
+}
 
+var blackPawnMove = function(x1,y1,x2,y2){
+	
+	if(x1 == x2 && y2 - y1 == -1){
+		return true;
+	}
+	if(x1 == x2 && y2 - y1 == -2 && y1 == 7){
+		return true;
+	}
+	return false;
 }
 
 var diagonal = function(x1,y1,x2,y2){
@@ -78,4 +88,4 @@ var vertical = function(x1,y1,x2,y2){
 
 
 //module.exports = knightMove, diagonal, horizontal, vertical;
-module.exports = vertical;
+module.exports = blackPawnMove;

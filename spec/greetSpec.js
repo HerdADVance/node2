@@ -82,6 +82,60 @@ var vertical = require('../src/greet');
 // 	});
 // });
 
+// describe('whitePawnMove', function() {
+// 	var x1 = 3;
+// 	var y1 = 4;
+
+// 	it('should allow moving forward 1 square', function() {
+// 		expect(vertical(x1,y1, 3,5)).toEqual(true);
+// 	});
+// 	it('should allow moving forward 2 squares if not moved yet', function() {
+// 		expect(vertical(x1,2, 3,4)).toEqual(true);
+// 	});
+// 	it('should not allow moving forward 2 squares if already mvoed', function() {
+// 		expect(vertical(x1,y1, 3,6)).toEqual(false);
+// 	});
+// 	it('should not allow diagonal moving horizontal', function() {
+// 		expect(vertical(x1,y1, 4,4)).toEqual(false);
+// 	});
+// 	it('should not allow moving forward 3 squares', function() {
+// 		expect(vertical(x1,y1, 3,7)).toEqual(false);
+// 	});
+// 	it('should not allow moving backwards', function() {
+// 		expect(vertical(x1,y1, 3,3)).toEqual(false);
+// 	});
+// 	it('should not allow same square', function() {
+// 		expect(vertical(x1,y1, 3,4)).toEqual(false);
+// 	});
+// });
+
+describe('blackPawnMove', function() {
+	var x1 = 3;
+	var y1 = 4;
+
+	it('should allow moving forward 1 square', function() {
+		expect(vertical(x1,y1, 3,3)).toEqual(true);
+	});
+	it('should allow moving forward 2 squares if not moved yet', function() {
+		expect(vertical(x1,7, 3,5)).toEqual(true);
+	});
+	it('should not allow moving forward 2 squares if already mvoed', function() {
+		expect(vertical(x1,y1, 3,2)).toEqual(false);
+	});
+	it('should not allow diagonal moving horizontal', function() {
+		expect(vertical(x1,y1, 4,4)).toEqual(false);
+	});
+	it('should not allow moving forward 3 squares', function() {
+		expect(vertical(x1,y1, 3,1)).toEqual(false);
+	});
+	it('should not allow moving backwards', function() {
+		expect(vertical(x1,y1, 3,5)).toEqual(false);
+	});
+	it('should not allow same square', function() {
+		expect(vertical(x1,y1, 3,4)).toEqual(false);
+	});
+});
+
 // describe('diagonal', function() {
 // 	var x1 = 3;
 // 	var y1 = 4;
@@ -133,23 +187,23 @@ var vertical = require('../src/greet');
 // 	});
 // });
 
-describe('vertical', function() {
-	var x1 = 3;
-	var y1 = 4;
+// describe('vertical', function() {
+// 	var x1 = 3;
+// 	var y1 = 4;
 
-	it('should allow moving up', function() {
-		expect(vertical(x1,y1, 3,8)).toEqual(true);
-	});
-	it('should allow moving down', function() {
-		expect(vertical(x1,y1, 3,2)).toEqual(true);
-	});
-	it('should not allow diagonal', function() {
-		expect(vertical(x1,y1, 7,8)).toEqual(false);
-	});
-	it('should not allow random', function() {
-		expect(vertical(x1,y1, 6,2)).toEqual(false);
-	});
-	it('should not allow same space', function() {
-		expect(vertical(x1,y1, 3,4)).toEqual(false);
-	});
-});
+// 	it('should allow moving up', function() {
+// 		expect(vertical(x1,y1, 3,8)).toEqual(true);
+// 	});
+// 	it('should allow moving down', function() {
+// 		expect(vertical(x1,y1, 3,2)).toEqual(true);
+// 	});
+// 	it('should not allow diagonal', function() {
+// 		expect(vertical(x1,y1, 7,8)).toEqual(false);
+// 	});
+// 	it('should not allow random', function() {
+// 		expect(vertical(x1,y1, 6,2)).toEqual(false);
+// 	});
+// 	it('should not allow same space', function() {
+// 		expect(vertical(x1,y1, 3,4)).toEqual(false);
+// 	});
+// });
