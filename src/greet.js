@@ -55,6 +55,22 @@ var blackPawnMove = function(x1,y1,x2,y2){
 	return false;
 }
 
+var whitePawnCapture = function(x1,y1,x2,y2){
+	
+	if(y2 - y1 == 1  && Math.abs(x2 - x1) == 1){
+		return true;
+	}
+	return false;
+}
+
+var blackPawnCapture = function(x1,y1,x2,y2){
+	
+	if(y2 - y1 == -1  && Math.abs(x2 - x1) == 1){
+		return true;
+	}
+	return false;
+}
+
 var diagonal = function(x1,y1,x2,y2){
 
 	var xAbs = Math.abs(x2 - x1);
@@ -88,4 +104,4 @@ var vertical = function(x1,y1,x2,y2){
 
 
 //module.exports = knightMove, diagonal, horizontal, vertical;
-module.exports = blackPawnMove;
+module.exports = blackPawnCapture;

@@ -11,7 +11,7 @@
 // 	});
 // });
 
-var vertical = require('../src/greet');
+var blackPawnCapture = require('../src/greet');
 
 // describe('knightMove', function() {
 // 	var x1 = 3;
@@ -87,52 +87,106 @@ var vertical = require('../src/greet');
 // 	var y1 = 4;
 
 // 	it('should allow moving forward 1 square', function() {
-// 		expect(vertical(x1,y1, 3,5)).toEqual(true);
+// 		expect(whitePawnMove(x1,y1, 3,5)).toEqual(true);
 // 	});
 // 	it('should allow moving forward 2 squares if not moved yet', function() {
-// 		expect(vertical(x1,2, 3,4)).toEqual(true);
+// 		expect(whitePawnMove(x1,2, 3,4)).toEqual(true);
 // 	});
 // 	it('should not allow moving forward 2 squares if already mvoed', function() {
-// 		expect(vertical(x1,y1, 3,6)).toEqual(false);
+// 		expect(whitePawnMove(x1,y1, 3,6)).toEqual(false);
 // 	});
 // 	it('should not allow diagonal moving horizontal', function() {
-// 		expect(vertical(x1,y1, 4,4)).toEqual(false);
+// 		expect(whitePawnMove(x1,y1, 4,4)).toEqual(false);
 // 	});
 // 	it('should not allow moving forward 3 squares', function() {
-// 		expect(vertical(x1,y1, 3,7)).toEqual(false);
+// 		expect(whitePawnMove(x1,y1, 3,7)).toEqual(false);
 // 	});
 // 	it('should not allow moving backwards', function() {
-// 		expect(vertical(x1,y1, 3,3)).toEqual(false);
+// 		expect(whitePawnMove(x1,y1, 3,3)).toEqual(false);
 // 	});
 // 	it('should not allow same square', function() {
-// 		expect(vertical(x1,y1, 3,4)).toEqual(false);
+// 		expect(whitePawnMove(x1,y1, 3,4)).toEqual(false);
 // 	});
 // });
 
-describe('blackPawnMove', function() {
+// describe('blackPawnMove', function() {
+// 	var x1 = 3;
+// 	var y1 = 4;
+
+// 	it('should allow moving forward 1 square', function() {
+// 		expect(blackPawnMove(x1,y1, 3,3)).toEqual(true);
+// 	});
+// 	it('should allow moving forward 2 squares if not moved yet', function() {
+// 		expect(blackPawnMove(x1,7, 3,5)).toEqual(true);
+// 	});
+// 	it('should not allow moving forward 2 squares if already mvoed', function() {
+// 		expect(blackPawnMove(x1,y1, 3,2)).toEqual(false);
+// 	});
+// 	it('should not allow diagonal moving horizontal', function() {
+// 		expect(blackPawnMove(x1,y1, 4,4)).toEqual(false);
+// 	});
+// 	it('should not allow moving forward 3 squares', function() {
+// 		expect(blackPawnMove(x1,y1, 3,1)).toEqual(false);
+// 	});
+// 	it('should not allow moving backwards', function() {
+// 		expect(blackPawnMove(x1,y1, 3,5)).toEqual(false);
+// 	});
+// 	it('should not allow same square', function() {
+// 		expect(blackPawnMove(x1,y1, 3,4)).toEqual(false);
+// 	});
+// });
+
+// describe('whitePawnCapture', function() {
+// 	var x1 = 3;
+// 	var y1 = 4;
+
+// 	it('should allow moving forward left diagonal ', function() {
+// 		expect(whitePawnCapture(x1,y1, 4,5)).toEqual(true);
+// 	});
+// 	it('should allow moving forward right diagonal', function() {
+// 		expect(whitePawnCapture(x1,y1, 2,5)).toEqual(true);
+// 	});
+// 	it('should not allow moving forward 1 square', function() {
+// 		expect(whitePawnCapture(x1,y1, 3,5)).toEqual(false);
+// 	});
+// 	it('should not allow moving forward 2 squares', function() {
+// 		expect(whitePawnCapture(x1,y1, 3,6)).toEqual(false);
+// 	});
+// 	it('should not allow horizontal', function() {
+// 		expect(whitePawnCapture(x1,y1, 2,4)).toEqual(false);
+// 	});
+// 	it('should not allow moving backwards', function() {
+// 		expect(whitePawnCapture(x1,y1, 3,3)).toEqual(false);
+// 	});
+// 	it('should not allow same square', function() {
+// 		expect(whitePawnCapture(x1,y1, 3,4)).toEqual(false);
+// 	});
+// });
+
+describe('blackPawnCapture', function() {
 	var x1 = 3;
 	var y1 = 4;
 
-	it('should allow moving forward 1 square', function() {
-		expect(vertical(x1,y1, 3,3)).toEqual(true);
+	it('should allow moving forward left diagonal ', function() {
+		expect(blackPawnCapture(x1,y1, 4,3)).toEqual(true);
 	});
-	it('should allow moving forward 2 squares if not moved yet', function() {
-		expect(vertical(x1,7, 3,5)).toEqual(true);
+	it('should allow moving forward right diagonal', function() {
+		expect(blackPawnCapture(x1,y1, 2,3)).toEqual(true);
 	});
-	it('should not allow moving forward 2 squares if already mvoed', function() {
-		expect(vertical(x1,y1, 3,2)).toEqual(false);
+	it('should not allow moving forward 1 square', function() {
+		expect(blackPawnCapture(x1,y1, 3,3)).toEqual(false);
 	});
-	it('should not allow diagonal moving horizontal', function() {
-		expect(vertical(x1,y1, 4,4)).toEqual(false);
+	it('should not allow moving forward 2 squares', function() {
+		expect(blackPawnCapture(x1,y1, 3,2)).toEqual(false);
 	});
-	it('should not allow moving forward 3 squares', function() {
-		expect(vertical(x1,y1, 3,1)).toEqual(false);
+	it('should not allow horizontal', function() {
+		expect(blackPawnCapture(x1,y1, 2,4)).toEqual(false);
 	});
 	it('should not allow moving backwards', function() {
-		expect(vertical(x1,y1, 3,5)).toEqual(false);
+		expect(blackPawnCapture(x1,y1, 3,5)).toEqual(false);
 	});
 	it('should not allow same square', function() {
-		expect(vertical(x1,y1, 3,4)).toEqual(false);
+		expect(blackPawnCapture(x1,y1, 3,4)).toEqual(false);
 	});
 });
 
