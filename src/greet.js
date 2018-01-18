@@ -102,6 +102,16 @@ var vertical = function(x1,y1,x2,y2){
 	}
 };
 
+module.exports = {
+	knightMove, 
+	kingMove,
+	whitePawnMove,
+	blackPawnMove,
+	whitePawnCapture,
+	blackPawnCapture,
+	diagonal,
+	horizontal,
+	vertical
+};
 
-//module.exports = knightMove, diagonal, horizontal, vertical;
-module.exports = blackPawnCapture;
+
